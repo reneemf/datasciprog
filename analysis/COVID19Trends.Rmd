@@ -1,0 +1,120 @@
+---
+title: "COVID19Trends"
+author: "reneemf"
+date: "2020-09-15"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Which countries have had the highest number of positive cases against the number of tests?
+*This project uses a cleaned Kaggle dataset [available here for download](https://dq-content.s3.amazonaws.com/505/covid19.csv)
+  *Original dataset with regular updates [available here](https://www.kaggle.com/lin0li/covid19testing)
+*The dataset used was collected between the 20th of January and the 1st of June 2020
+
+```{r load packages and csv file}
+library(readr)
+covid_df <- read_csv("data/covid19.csv")
+```
+To begin we will analyze the dimensions and contents of the data
+
+```{r covid_df analysis}
+
+# View df dimensions
+dim(covid_df)
+
+# View df column names
+vector_cols <- colnames(covid_df)
+vector_cols
+
+# View df head
+head(covid_df)
+
+# Glimpse df
+library(tibble)
+glimpse(covid_df)
+```
+
+### Dataset columns descriptions:
+1. Date: Date
+2. Continent_Name: Continent names
+3. Two_Letter_Country_Code: Country codes
+4. Country_Region: Country names
+5. Province_State: States/province names; value is All States when state/provincial level data is not available
+6. positive: *Cumulative* number of positive cases reported.
+7. active: Number of actively cases on that **day**.
+8. hospitalized: *Cumulative* number of hospitalized cases reported.
+9. hospitalizedCurr: Number of actively hospitalized cases on that **day**.
+10.recovered: *Cumulative* number of recovered cases reported.
+11. death: *Cumulative* number of deaths reported.
+12. total_tested: *Cumulative* number of tests conducted.
+13. daily_tested: Number of tests conducted on the **day**; if daily data is unavailable, daily tested is averaged across number of days in between.
+14. daily_positive: Number of positive cases reported on the **day**; if daily data is unavailable, daily positive is averaged across number of days in.
+
+To focus on COVID cases and tests within entire countries, we will filter the data to retain only the rows where Province_State is listed as "All States"
+
+```{r covid_df filtering}
+library(dplyr)
+covid_df_all_states <- covid_df %>% filter(Province_State == "All States") %>% select(-Province_State)
+```
+
+To study COVID cases and tests by country over time we will need to seperate columns describing cumulative data versus daily reports
+
+* Selected cumulative data columns will be 
+  * Date
+  * Country_Region
+  * positive
+  * hospitalized
+  * recovered
+  * death
+  * total_tested
+
+* Selected daily reports data columns will be 
+  * Date
+  * Country_Region
+  * active
+  * hospitalizedCurr
+  * daily_tested
+  * daily_positive
+
+```{r covid_df split into cumulative vs. daily}
+covid_df_all_states_cumu <- covid_df %>% select(Date, Country_Region, positive, hospitalized, recovered, death, total_tested)
+covid_df_all_states_daily <- covid_df %>% select(Date, Country_Region, active, hospitalizedCurr, daily_tested, daily_positive)
+```
+
+I plan to find overall number of COVID-19 tested, positive, active and hospitalized cases by country and then highlight the top ten countries
+
+```{r summarize cases}
+# Cumulative data columns
+covid_df_all_states_cumu_sum <- covid_df_all_states_cumu %>% group_by(Country_Region) %>% summarize(positive = sum(positive), hospitalized = sum(hospitalized), recovered = sum(recovered), death = sum(death), tested = sum(total_tested), pos_v_test = positive/tested) 
+covid_cumu_top_tests <- covid_df_all_states_cumu_sum %>% arrange(desc(tested))
+
+# Daily reports data columns
+covid_df_all_states_daily_sum <- covid_df_all_states_daily %>% group_by(Country_Region) %>% summarize(active = sum(active), hospitalized = sum(hospitalizedCurr), tested = sum(daily_tested), positive = sum(daily_positive), pos_v_test = positive/tested) 
+covid_daily_top_tests <- covid_df_all_states_daily_sum %>% arrange(desc(tested))
+```
+
+```{r highlight top ten}
+# Cumulative data columns
+covid_cumu_top_10 <- head(covid_cumu_top_tests, 10)
+covid_cumu_top_10
+
+# Daily reports data columns
+covid_daily_top_10 <- head(covid_daily_top_tests, 10)
+covid_daily_top_10
+```
+
+Lets compare the numbers of positive cases against the number of tests
+
+```{r positive cases vs. tests}
+#Compare positive cases vs. tests for cumulative data columns
+covid_cumu_top_pvt <- covid_df_all_states_cumu_sum %>% arrange(desc(pos_v_test))
+covid_cumu_top_10_pvt <- head(covid_cumu_top_pvt, 10)
+covid_cumu_top_10_pvt
+
+
+#Compare positive cases vs. tests for daily reports data columns
+covid_daily_top_pvt <- covid_df_all_states_cumu_sum %>% arrange(desc(pos_v_test))
+covid_daily_top_10_pvt <- head(covid_daily_top_pvt, 10)
+covid_daily_top_10_pvt
+```

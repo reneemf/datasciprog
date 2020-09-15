@@ -1,0 +1,230 @@
+---
+title: "forestfires"
+author: "reneemf"
+date: "2020-09-15"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r Load packages & Import data}
+rm(list = ls()) # clear workspace
+
+library(tidyverse)
+library(ggthemes)
+
+forest_fires <- read_csv('data/forestfires.csv')
+
+summary(forest_fires)
+head(forest_fires)
+```
+
+Data is taken from a 2006 forest fire prevention (publication)[http://www3.dsi.uminho.pt/pcortez/fires.pdf] and can be found (here)[https://archive.ics.uci.edu/ml/machine-learning-databases/forest-fires/]
+
+When are forest fires most common? During which months? or days?
+
+To begin analysis, mutate df to put months & days in chronological order 
+
+```{r df mutation}
+forest_fires <- forest_fires %>%
+  mutate(month = factor(month, levels = c(tolower(month.abb))),
+         day = factor(day, levels = c("mon", "tue", "wed", "thu", "fri", "sat", "sun")))
+```
+
+Set overall theme for all plots:
+```{r plot theme}
+plot_theme <- theme_hc() + theme(plot.title = element_text(family = "Helvetica", face = "bold", size = (15), hjust = 0.5),
+                    axis.title = element_text(family = "Helvetica", size = (12)),
+                    axis.text = element_text(family = "Helvetica", size = (12)), 
+                    axis.ticks = element_line(colour = "grey70", size = 0.2),
+                    panel.grid.major = element_line(colour = "grey70", size = 0.2),
+                    panel.grid.minor = element_blank())
+```
+
+Plot forest fires per month
+```{r fires per month}
+fires_per_month <- forest_fires %>%
+  group_by(month) %>%
+  summarize(total_fires = n())
+
+ggplot(fires_per_month, aes(x = month, y = total_fires)) +
+  geom_bar(stat = 'identity') +
+  ggtitle("Monthly Forest Fires in Portugal from \nJan 2000 to Dec 2003") +
+  labs(y = 'Total Number of Fires', x = 'Month') +
+  plot_theme + 
+  ylim(0, 200)
+```
+
+Plot forest fires per day
+```{r fires per day}
+fires_per_day <- forest_fires %>%
+  group_by(day) %>%
+  summarize(total_fires = n())
+
+ggplot(fires_per_day, aes(x = day, y = total_fires)) +
+  geom_bar(stat = 'identity') +
+  ggtitle("Daily Forest Fires in Portugal from \nJan 2000 to Dec 2003") +
+  labs(y = 'Total Number of Fires', x = 'Day of the Week') +
+  plot_theme +
+  ylim(0, 100)
+```
+
+Fires seem to occur more in the late summer/early fall, especially August, and September followed by March. They allow occur more on the weekend (Sunday, Friday, and Saturday in order).
+
+
+How are variables linked to forest fires, like temperature, rainfall, etc., distributed among the months and days measured?
+
+Build function to make box plots
+```{r box plot build}
+# Build function to make box plots
+boxplotter <- function(x, y) {
+  ggplot(data = forest_fires) + 
+    aes_string(x = x, y = y) +
+    geom_boxplot() + plot_theme +
+    ylim(0, 8)
+}
+
+# Assign variables
+x_var_m <- names(forest_fires)[3] # month
+x_var_d <- names(forest_fires)[4] # day
+y_var <- names(forest_fires)[5:12] # "FFMC" "DMC"  "DC" "ISI" "temp" "RH" 
+# "wind" and "rain" which stand for "Fine Fuel Moisture Code" 
+# "Duff Moisture Code" "Drought Code", "Initial Spread Index", "Temperature", 
+# "Relative Humidity (%)", "Wind", and "Rainfall"
+
+# Visualize distributions by month and day
+month_boxplot <- map2(x_var_m, y_var, boxplotter)
+day_boxplot <- map2(x_var_d, y_var, boxplotter)
+```
+
+temp & DC (drought code, measures dry conditions) are both high in the summer & early fall months when more forest fires are occurring.
+
+Are these late summer/early fall forest fires more or less severe than the fires throughout the rest of the year?
+
+
+Forest fire size/spread will be used to assess severity
+
+```{r scatter plot build}
+# Build function to make scatter plots
+scatterplotter <- function(x, y) {
+  ggplot(data = forest_fires) + 
+    aes_string(x = x, y = y) +
+    geom_point() + plot_theme +
+    ylim(0, 800)
+}
+
+# Assign variables
+x_var_scat <- names(forest_fires)[5:12]
+y_var_scat <- names(forest_fires)[13] #area
+
+# Visualize which variables may affect forest fire size
+scatterplots <- map2(x_var_scat, y_var_scat, scatterplotter)
+scatterplots
+```
+
+Scatterplots do not show a very clear pattern, possibly due to outliers which will need to be addressed. Subsetting data may help in understanding how different variables contribute to fire spread (area) w/o the interference of outliers
+
+```{r filtering}
+# Outliers can be filtered out using interquartile range (IQR)
+forest_fires_no_highs <- forest_fires %>%
+  filter(area <= quantile(forest_fires$area, 0.75) + IQR(forest_fires$area) * 1.5)
+
+# Rebuild function to make new scatter plots w/o v large values
+scatterplotter_no_highs <- function(x, y) {
+  ggplot(data = forest_fires_no_highs) + 
+    aes_string(x = x, y = y) +
+    geom_point() + plot_theme +
+    ylim(0, 20)
+}
+
+sps_no_highs <- map2(x_var_scat, y_var_scat, scatterplotter_no_highs)
+sps_no_highs
+```
+
+Plots have lots of data points clustered at the bottom. How would removing outliers from the bottom of the IQR affect them?
+
+```{r rm outliers from IQR 0.25}
+forest_fires_no_lows <- forest_fires %>%
+  filter(area >= quantile(forest_fires$area, 0.25) - IQR(forest_fires$area) * 1.5)
+
+# Rebuild function to make new scatter plots w/o v small values
+scatterplotter_no_lows <- function(x, y) {
+  ggplot(data = forest_fires_no_lows) + 
+    aes_string(x = x, y = y) +
+    geom_point() + plot_theme +
+    ylim(0, 800)
+}
+
+sps_no_lows <- map2(x_var_scat, y_var_scat, scatterplotter_no_lows)
+sps_no_lows
+```
+
+What is the impact of removing outliers on top & bottom of IQR?
+
+```{r rm top & bottom IQR}
+# Remove outliers on top & bottom of IQR
+forest_fires_no_outs <- forest_fires %>%
+  filter(area <= quantile(forest_fires$area, 0.75)+IQR(forest_fires$area)*1.5 & 
+           area >= quantile(forest_fires$area, 0.25)-IQR(forest_fires$area)*1.5)
+
+# Rebuild function to make new scatter plots w/o v small or v large values
+scatterplotter_no_outs <- function(x, y) {
+  ggplot(data = forest_fires_no_outs) + 
+    aes_string(x = x, y = y) +
+    geom_point() + plot_theme +
+    ylim(0, 20)
+}
+
+sps_no_outs <- map2(x_var_scat, y_var_scat, scatterplotter_no_outs)
+sps_no_outs
+```
+
+Plots look better but still have points clustered @ bottom 
+
+forest_fires has entries of 0 as the area of some fires which seems suspect and is limiting how predictive my scatters can be. I will remove these
+
+```{r rm zeros}
+# Filter out 0s
+forest_fires_no_zeros <- forest_fires %>%
+  filter(area != 0)
+
+# Rebuild function to make new scatter plots w/o 0s
+scatterplotter_no_zeros <- function(x, y) {
+  ggplot(data = forest_fires_no_zeros) + 
+    aes_string(x = x, y = y) +
+    geom_point() + plot_theme +
+    ylim(0, 800)
+}
+
+sps_no_zeros <- map2(x_var_scat, y_var_scat, scatterplotter_no_zeros)
+sps_no_zeros
+```
+
+How does removing both outliers and zeros affect the data?
+
+```{r rm outliers & 0s}
+# Plot data w/o outliers or 0s
+forest_fires_no_outs_or_zeros <- forest_fires %>%
+  filter(area != 0) %>%
+  filter(area <= quantile(forest_fires$area, 0.75)+IQR(forest_fires$area)*1.5 & 
+           area >= quantile(forest_fires$area, 0.25)-IQR(forest_fires$area)*1.5)
+
+# Rebuild function to make new scatter plots w/o v small or v large values
+scatterplotter_no_outs_or_zeros <- function(x, y) {
+  ggplot(data = forest_fires_no_outs_or_zeros) + 
+    aes_string(x = x, y = y) +
+    geom_point() + plot_theme +
+    ylim(0, 20)
+}
+
+sps_no_outs_or_zeros <- map2(x_var_scat, y_var_scat, 
+                             scatterplotter_no_outs_or_zeros)
+sps_no_outs_or_zeros
+```
+
+Honestly not seeing a clear pattern at this time 
+
+Future plans: 
+    compress all these plotting functions into one that takes any data set, any x & any y and put plots in the same screen(such as using the code: par(mfrow=c(n,n))), so they're easier to compare 
