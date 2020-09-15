@@ -21,7 +21,7 @@ summary(forest_fires)
 head(forest_fires)
 ```
 
-Data is taken from a 2006 forest fire prevention (publication)[http://www3.dsi.uminho.pt/pcortez/fires.pdf] and can be found (here)[https://archive.ics.uci.edu/ml/machine-learning-databases/forest-fires/]
+Data is taken from a 2006 forest fire prevention [publication](http://www3.dsi.uminho.pt/pcortez/fires.pdf) and can be found [here](https://archive.ics.uci.edu/ml/machine-learning-databases/forest-fires/)
 
 When are forest fires most common? During which months? or days?
 
