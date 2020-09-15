@@ -25,6 +25,7 @@ More information can be found on me [here](https://linktr.ee/fonsecarenee).
 2019:
 
 * [Shell scripting/Linux tutorial in Spanish](https://docs.google.com/document/d/1aMz3ULXUoUmgiThjdC92lNqQFYBPIBdRzzNw8cMn60g/edit)
+* [NCBI Hackathon](https://github.com/NCBI-Hackathons/UPWARD)
 
 2018:
 
