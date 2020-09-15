@@ -16,20 +16,23 @@ Here I will be organizing my projects related to data science, bioinformatics, o
 More information can be found on me [here](https://linktr.ee/fonsecarenee).
 
 ###2020:
-*[COVID19 Trend Analysis in R](COVID19Trends.html)
-*[Forest Fire Stats Analysis in R](forestfires.html)
-*[Mobile app analytics in Python using Jupyter Notebook](https://github.com/reneemf/Mobile_app_analytics)
-*[Credit card checker tool in C](https://github.com/reneemf/CC_checker)
+
+* [COVID19 Trend Analysis in R](COVID19Trends.html)
+* [Forest Fire Stats Analysis in R](forestfires.html)
+* [Mobile app analytics in Python using Jupyter Notebook](https://github.com/reneemf/Mobile_app_analytics)
+* [Credit card checker tool in C](https://github.com/reneemf/CC_checker)
 
 ###2019:
-*[Shell scripting/Linux tutorial in Spanish](https://docs.google.com/document/d/1aMz3ULXUoUmgiThjdC92lNqQFYBPIBdRzzNw8cMn60g/edit)
+
+* [Shell scripting/Linux tutorial in Spanish](https://docs.google.com/document/d/1aMz3ULXUoUmgiThjdC92lNqQFYBPIBdRzzNw8cMn60g/edit)
 
 ###2018:
-*[Canadian Community Health Survey analysis in R](https://github.com/reneemf/CCHS-analysis)
-*[Plotting Amino Acids in Python](https://github.com/reneemf/Plot-AminoAcids)
-*[Longest stem-loop search in Python](https://github.com/reneemf/DNA-RNA-stemloopsearch)
-*[Transcription translation tool in Python](https://github.com/reneemf/Transcription_translation)
-*[FASTA manipulation tool in Python](https://github.com/reneemf/FASTA-manipulation)
-*[GenBank download tool in Python](https://github.com/reneemf/GenBank-download)
+
+* [Canadian Community Health Survey analysis in R](https://github.com/reneemf/CCHS-analysis)
+* [Plotting Amino Acids in Python](https://github.com/reneemf/Plot-AminoAcids)
+* [Longest stem-loop search in Python](https://github.com/reneemf/DNA-RNA-stemloopsearch)
+* [Transcription translation tool in Python](https://github.com/reneemf/Transcription_translation)
+* [FASTA manipulation tool in Python](https://github.com/reneemf/FASTA-manipulation)
+* [GenBank download tool in Python](https://github.com/reneemf/GenBank-download)
 
 
