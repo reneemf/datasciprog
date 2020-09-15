@@ -27,6 +27,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -368,7 +370,13 @@ div.tocify {
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/reneemf/datasciprog">
+    <span class="fa fa-github"></span>
+     
+    Source code
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -496,16 +504,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong98ecc28"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> 98ecc28 </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomreneemfdatasciprogtree66dc803f722d5af5b956479fb34721eae722ed52targetblank66dc803a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/reneemf/datasciprog/tree/66dc803f722d5af5b956479fb34721eae722ed52" target="_blank">66dc803</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrong98ecc28" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomreneemfdatasciprogtree66dc803f722d5af5b956479fb34721eae722ed52targetblank66dc803a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version 98ecc28. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/reneemf/datasciprog/tree/66dc803f722d5af5b956479fb34721eae722ed52" target="_blank">66dc803</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -555,10 +563,27 @@ Message
 <tbody>
 <tr>
 <td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/reneemf/datasciprog/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/forestfires.html" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
 Rmd
 </td>
 <td>
-98ecc28
+<a href="https://github.com/reneemf/datasciprog/blob/98ecc28c543b241d2ba55814fd4f216914b71ed9/analysis/forestfires.Rmd" target="_blank">98ecc28</a>
 </td>
 <td>
 reneemf
@@ -673,6 +698,43 @@ cols(
   plot_theme + 
   ylim(0, 200)</code></pre>
 <p><img src="figure/forestfires.Rmd/fires%20per%20month-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-fires-per-month-1">
+Past versions of “fires per month-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-fires-per-month-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/fires per month-1.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Plot forest fires per day</p>
 <pre class="r"><code>fires_per_day &lt;- forest_fires %&gt;%
   group_by(day) %&gt;%
@@ -685,6 +747,43 @@ cols(
   plot_theme +
   ylim(0, 100)</code></pre>
 <p><img src="figure/forestfires.Rmd/fires%20per%20day-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-fires-per-day-1">
+Past versions of “fires per day-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-fires-per-day-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/fires per day-1.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Fires seem to occur more in the late summer/early fall, especially August, and September followed by March. They allow occur more on the weekend (Sunday, Friday, and Saturday in order).</p>
 <p>How are variables linked to forest fires, like temperature, rainfall, etc., distributed among the months and days measured?</p>
 <p>Build function to make box plots</p>
@@ -728,34 +827,330 @@ scatterplots</code></pre>
 <pre><code>[[1]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/scatter%20plot%20build-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-scatter-plot-build-1">
+Past versions of “scatter plot build-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-scatter-plot-build-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/scatter plot build-1.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[2]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/scatter%20plot%20build-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-scatter-plot-build-2">
+Past versions of “scatter plot build-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-scatter-plot-build-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/scatter plot build-2.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[3]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/scatter%20plot%20build-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-scatter-plot-build-3">
+Past versions of “scatter plot build-3.png”
+</button>
+</p>
+<div id="fig-no-spaces-scatter-plot-build-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/scatter plot build-3.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[4]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/scatter%20plot%20build-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-scatter-plot-build-4">
+Past versions of “scatter plot build-4.png”
+</button>
+</p>
+<div id="fig-no-spaces-scatter-plot-build-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/scatter plot build-4.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[5]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/scatter%20plot%20build-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-scatter-plot-build-5">
+Past versions of “scatter plot build-5.png”
+</button>
+</p>
+<div id="fig-no-spaces-scatter-plot-build-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/scatter plot build-5.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[6]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/scatter%20plot%20build-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-scatter-plot-build-6">
+Past versions of “scatter plot build-6.png”
+</button>
+</p>
+<div id="fig-no-spaces-scatter-plot-build-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/scatter plot build-6.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[7]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/scatter%20plot%20build-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-scatter-plot-build-7">
+Past versions of “scatter plot build-7.png”
+</button>
+</p>
+<div id="fig-no-spaces-scatter-plot-build-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/scatter plot build-7.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[8]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/scatter%20plot%20build-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-scatter-plot-build-8">
+Past versions of “scatter plot build-8.png”
+</button>
+</p>
+<div id="fig-no-spaces-scatter-plot-build-8" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/scatter plot build-8.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Scatterplots do not show a very clear pattern, possibly due to outliers which will need to be addressed. Subsetting data may help in understanding how different variables contribute to fire spread (area) w/o the interference of outliers</p>
 <pre class="r"><code># Outliers can be filtered out using interquartile range (IQR)
 forest_fires_no_highs &lt;- forest_fires %&gt;%
@@ -773,27 +1168,323 @@ sps_no_highs &lt;- map2(x_var_scat, y_var_scat, scatterplotter_no_highs)
 sps_no_highs</code></pre>
 <pre><code>[[1]]</code></pre>
 <p><img src="figure/forestfires.Rmd/filtering-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-filtering-1">
+Past versions of filtering-1.png
+</button>
+</p>
+<div id="fig-filtering-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/filtering-1.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[2]]</code></pre>
 <p><img src="figure/forestfires.Rmd/filtering-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-filtering-2">
+Past versions of filtering-2.png
+</button>
+</p>
+<div id="fig-filtering-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/filtering-2.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[3]]</code></pre>
 <p><img src="figure/forestfires.Rmd/filtering-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-filtering-3">
+Past versions of filtering-3.png
+</button>
+</p>
+<div id="fig-filtering-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/filtering-3.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[4]]</code></pre>
 <p><img src="figure/forestfires.Rmd/filtering-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-filtering-4">
+Past versions of filtering-4.png
+</button>
+</p>
+<div id="fig-filtering-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/filtering-4.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[5]]</code></pre>
 <p><img src="figure/forestfires.Rmd/filtering-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-filtering-5">
+Past versions of filtering-5.png
+</button>
+</p>
+<div id="fig-filtering-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/filtering-5.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[6]]</code></pre>
 <p><img src="figure/forestfires.Rmd/filtering-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-filtering-6">
+Past versions of filtering-6.png
+</button>
+</p>
+<div id="fig-filtering-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/filtering-6.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[7]]</code></pre>
 <p><img src="figure/forestfires.Rmd/filtering-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-filtering-7">
+Past versions of filtering-7.png
+</button>
+</p>
+<div id="fig-filtering-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/filtering-7.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[8]]</code></pre>
 <p><img src="figure/forestfires.Rmd/filtering-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-filtering-8">
+Past versions of filtering-8.png
+</button>
+</p>
+<div id="fig-filtering-8" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/filtering-8.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Plots have lots of data points clustered at the bottom. How would removing outliers from the bottom of the IQR affect them?</p>
 <pre class="r"><code>forest_fires_no_lows &lt;- forest_fires %&gt;%
   filter(area &gt;= quantile(forest_fires$area, 0.25) - IQR(forest_fires$area) * 1.5)
@@ -811,34 +1502,330 @@ sps_no_lows</code></pre>
 <pre><code>[[1]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20from%20IQR%200.25-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-from-IQR-0.25-1">
+Past versions of “rm outliers from IQR 0.25-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-from-IQR-0.25-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers from IQR 0.25-1.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[2]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20from%20IQR%200.25-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-from-IQR-0.25-2">
+Past versions of “rm outliers from IQR 0.25-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-from-IQR-0.25-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers from IQR 0.25-2.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[3]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20from%20IQR%200.25-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-from-IQR-0.25-3">
+Past versions of “rm outliers from IQR 0.25-3.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-from-IQR-0.25-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers from IQR 0.25-3.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[4]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20from%20IQR%200.25-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-from-IQR-0.25-4">
+Past versions of “rm outliers from IQR 0.25-4.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-from-IQR-0.25-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers from IQR 0.25-4.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[5]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20from%20IQR%200.25-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-from-IQR-0.25-5">
+Past versions of “rm outliers from IQR 0.25-5.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-from-IQR-0.25-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers from IQR 0.25-5.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[6]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20from%20IQR%200.25-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-from-IQR-0.25-6">
+Past versions of “rm outliers from IQR 0.25-6.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-from-IQR-0.25-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers from IQR 0.25-6.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[7]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20from%20IQR%200.25-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-from-IQR-0.25-7">
+Past versions of “rm outliers from IQR 0.25-7.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-from-IQR-0.25-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers from IQR 0.25-7.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[8]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20from%20IQR%200.25-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-from-IQR-0.25-8">
+Past versions of “rm outliers from IQR 0.25-8.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-from-IQR-0.25-8" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers from IQR 0.25-8.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>What is the impact of removing outliers on top &amp; bottom of IQR?</p>
 <pre class="r"><code># Remove outliers on top &amp; bottom of IQR
 forest_fires_no_outs &lt;- forest_fires %&gt;%
@@ -857,27 +1844,323 @@ sps_no_outs &lt;- map2(x_var_scat, y_var_scat, scatterplotter_no_outs)
 sps_no_outs</code></pre>
 <pre><code>[[1]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20top%20&%20bottom%20IQR-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-top-&amp;-bottom-IQR-1">
+Past versions of “rm top &amp; bottom IQR-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-top-&amp;-bottom-IQR-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm top & bottom IQR-1.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[2]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20top%20&%20bottom%20IQR-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-top-&amp;-bottom-IQR-2">
+Past versions of “rm top &amp; bottom IQR-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-top-&amp;-bottom-IQR-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm top & bottom IQR-2.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[3]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20top%20&%20bottom%20IQR-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-top-&amp;-bottom-IQR-3">
+Past versions of “rm top &amp; bottom IQR-3.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-top-&amp;-bottom-IQR-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm top & bottom IQR-3.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[4]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20top%20&%20bottom%20IQR-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-top-&amp;-bottom-IQR-4">
+Past versions of “rm top &amp; bottom IQR-4.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-top-&amp;-bottom-IQR-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm top & bottom IQR-4.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[5]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20top%20&%20bottom%20IQR-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-top-&amp;-bottom-IQR-5">
+Past versions of “rm top &amp; bottom IQR-5.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-top-&amp;-bottom-IQR-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm top & bottom IQR-5.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[6]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20top%20&%20bottom%20IQR-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-top-&amp;-bottom-IQR-6">
+Past versions of “rm top &amp; bottom IQR-6.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-top-&amp;-bottom-IQR-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm top & bottom IQR-6.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[7]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20top%20&%20bottom%20IQR-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-top-&amp;-bottom-IQR-7">
+Past versions of “rm top &amp; bottom IQR-7.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-top-&amp;-bottom-IQR-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm top & bottom IQR-7.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[8]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20top%20&%20bottom%20IQR-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-top-&amp;-bottom-IQR-8">
+Past versions of “rm top &amp; bottom IQR-8.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-top-&amp;-bottom-IQR-8" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm top & bottom IQR-8.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Plots look better but still have points clustered @ bottom</p>
 <p>forest_fires has entries of 0 as the area of some fires which seems suspect and is limiting how predictive my scatters can be. I will remove these</p>
 <pre class="r"><code># Filter out 0s
@@ -897,34 +2180,330 @@ sps_no_zeros</code></pre>
 <pre><code>[[1]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20zeros-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-zeros-1">
+Past versions of “rm zeros-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-zeros-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm zeros-1.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[2]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20zeros-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-zeros-2">
+Past versions of “rm zeros-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-zeros-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm zeros-2.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[3]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20zeros-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-zeros-3">
+Past versions of “rm zeros-3.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-zeros-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm zeros-3.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[4]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20zeros-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-zeros-4">
+Past versions of “rm zeros-4.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-zeros-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm zeros-4.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[5]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20zeros-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-zeros-5">
+Past versions of “rm zeros-5.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-zeros-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm zeros-5.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[6]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20zeros-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-zeros-6">
+Past versions of “rm zeros-6.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-zeros-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm zeros-6.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[7]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20zeros-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-zeros-7">
+Past versions of “rm zeros-7.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-zeros-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm zeros-7.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[8]]</code></pre>
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20zeros-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-zeros-8">
+Past versions of “rm zeros-8.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-zeros-8" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm zeros-8.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>How does removing both outliers and zeros affect the data?</p>
 <pre class="r"><code># Plot data w/o outliers or 0s
 forest_fires_no_outs_or_zeros &lt;- forest_fires %&gt;%
@@ -945,27 +2524,323 @@ sps_no_outs_or_zeros &lt;- map2(x_var_scat, y_var_scat,
 sps_no_outs_or_zeros</code></pre>
 <pre><code>[[1]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20&%200s-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-&amp;-0s-1">
+Past versions of “rm outliers &amp; 0s-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-&amp;-0s-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers & 0s-1.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[2]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20&%200s-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-&amp;-0s-2">
+Past versions of “rm outliers &amp; 0s-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-&amp;-0s-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers & 0s-2.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[3]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20&%200s-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-&amp;-0s-3">
+Past versions of “rm outliers &amp; 0s-3.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-&amp;-0s-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers & 0s-3.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[4]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20&%200s-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-&amp;-0s-4">
+Past versions of “rm outliers &amp; 0s-4.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-&amp;-0s-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers & 0s-4.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[5]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20&%200s-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-&amp;-0s-5">
+Past versions of “rm outliers &amp; 0s-5.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-&amp;-0s-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers & 0s-5.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[6]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20&%200s-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-&amp;-0s-6">
+Past versions of “rm outliers &amp; 0s-6.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-&amp;-0s-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers & 0s-6.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[7]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20&%200s-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-&amp;-0s-7">
+Past versions of “rm outliers &amp; 0s-7.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-&amp;-0s-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers & 0s-7.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[8]]</code></pre>
 <p><img src="figure/forestfires.Rmd/rm%20outliers%20&%200s-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-rm-outliers-&amp;-0s-8">
+Past versions of “rm outliers &amp; 0s-8.png”
+</button>
+</p>
+<div id="fig-no-spaces-rm-outliers-&amp;-0s-8" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/reneemf/datasciprog/blob/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/figure/forestfires.Rmd/rm outliers & 0s-8.png" target="_blank">d4fe1f0</a>
+</td>
+<td>
+reneemf
+</td>
+<td>
+2020-09-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Honestly not seeing a clear pattern at this time</p>
 <p>Future plans: compress all these plotting functions into one that takes any data set, any x &amp; any y and put plots in the same screen(such as using the code: par(mfrow=c(n,n))), so they’re easier to compare</p>
 <br>
