@@ -15,7 +15,7 @@ Here I will be organizing my projects related to data science, bioinformatics, o
 
 More information can be found on me [here](https://linktr.ee/fonsecarenee).
 
-###2020:
+##2020:
 
 * [COVID19 Trend Analysis in R](COVID19Trends.html)
 * [Forest Fire Stats Analysis in R](forestfires.html)
