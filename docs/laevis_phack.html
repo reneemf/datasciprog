@@ -9,11 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="reneemf" />
+<meta name="author" content="Renee" />
 
-<meta name="date" content="2020-09-15" />
 
-<title>COVID19Trends</title>
+<title>laevis_phack</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -386,9 +385,9 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">COVID19Trends</h1>
-<h4 class="author">reneemf</h4>
-<h4 class="date">2020-09-15</h4>
+<h1 class="title toc-ignore">laevis_phack</h1>
+<h4 class="author">Renee</h4>
+<h4 class="date">9/17/2020</h4>
 
 </div>
 
@@ -537,7 +536,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/COVID19Trends.Rmd</code>) and HTML (<code>docs/COVID19Trends.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/laevis_phack.Rmd</code>) and HTML (<code>docs/laevis_phack.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -563,70 +562,19 @@ Message
 <tbody>
 <tr>
 <td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/reneemf/datasciprog/8b62536ec8cf43b8d12e21c11d0937ed639b2ea7/docs/COVID19Trends.html" target="_blank">8b62536</a>
-</td>
-<td>
-reneemf
-</td>
-<td>
-2020-09-15
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/reneemf/datasciprog/1154d20959750e9d72285d057ae2f631f5084825/docs/COVID19Trends.html" target="_blank">1154d20</a>
-</td>
-<td>
-reneemf
-</td>
-<td>
-2020-09-15
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/reneemf/datasciprog/d4fe1f0ddb34590b054952495aab063fb5598a16/docs/COVID19Trends.html" target="_blank">d4fe1f0</a>
-</td>
-<td>
-reneemf
-</td>
-<td>
-2020-09-15
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
 Rmd
 </td>
 <td>
-<a href="https://github.com/reneemf/datasciprog/blob/98ecc28c543b241d2ba55814fd4f216914b71ed9/analysis/COVID19Trends.Rmd" target="_blank">98ecc28</a>
+<a href="https://github.com/reneemf/datasciprog/blob/4abc514af9ff5128dd5b7faeee625869dab21212/analysis/laevis_phack.Rmd" target="_blank">4abc514</a>
 </td>
 <td>
 reneemf
 </td>
 <td>
-2020-09-15
+2020-09-18
 </td>
 <td>
-Publish data and other files
+wflow_publish(c("analysis/*Rmd"))
 </td>
 </tr>
 </tbody>
@@ -636,204 +584,67 @@ Publish data and other files
 </div>
 </div>
 </div>
-<div id="which-countries-have-had-the-highest-number-of-positive-cases-against-the-number-of-tests" class="section level2">
-<h2>Which countries have had the highest number of positive cases against the number of tests?</h2>
-<p><em>This project uses a cleaned Kaggle dataset <a href="https://dq-content.s3.amazonaws.com/505/covid19.csv">available here for download</a> </em>Original dataset with regular updates <a href="https://www.kaggle.com/lin0li/covid19testing">available here</a> *The dataset used was collected between the 20th of January and the 1st of June 2020</p>
-<pre class="r"><code>library(readr)
-covid_df &lt;- read_csv(&quot;data/covid19.csv&quot;)</code></pre>
-<pre><code>Parsed with column specification:
-cols(
-  Date = col_date(format = &quot;&quot;),
-  Continent_Name = col_character(),
-  Two_Letter_Country_Code = col_character(),
-  Country_Region = col_character(),
-  Province_State = col_character(),
-  positive = col_double(),
-  hospitalized = col_double(),
-  recovered = col_double(),
-  death = col_double(),
-  total_tested = col_double(),
-  active = col_double(),
-  hospitalizedCurr = col_double(),
-  daily_tested = col_double(),
-  daily_positive = col_double()
-)</code></pre>
-<p>To begin we will analyze the dimensions and contents of the data</p>
-<pre class="r"><code># View df dimensions
-dim(covid_df)</code></pre>
-<pre><code>[1] 10903    14</code></pre>
-<pre class="r"><code># View df column names
-vector_cols &lt;- colnames(covid_df)
-vector_cols</code></pre>
-<pre><code> [1] &quot;Date&quot;                    &quot;Continent_Name&quot;         
- [3] &quot;Two_Letter_Country_Code&quot; &quot;Country_Region&quot;         
- [5] &quot;Province_State&quot;          &quot;positive&quot;               
- [7] &quot;hospitalized&quot;            &quot;recovered&quot;              
- [9] &quot;death&quot;                   &quot;total_tested&quot;           
-[11] &quot;active&quot;                  &quot;hospitalizedCurr&quot;       
-[13] &quot;daily_tested&quot;            &quot;daily_positive&quot;         </code></pre>
-<pre class="r"><code># View df head
-head(covid_df)</code></pre>
-<pre><code># A tibble: 6 x 14
-  Date       Continent_Name Two_Letter_Coun… Country_Region Province_State
-  &lt;date&gt;     &lt;chr&gt;          &lt;chr&gt;            &lt;chr&gt;          &lt;chr&gt;         
-1 2020-01-20 Asia           KR               South Korea    All States    
-2 2020-01-22 North America  US               United States  All States    
-3 2020-01-22 North America  US               United States  Washington    
-4 2020-01-23 North America  US               United States  All States    
-5 2020-01-23 North America  US               United States  Washington    
-6 2020-01-24 Asia           KR               South Korea    All States    
-# … with 9 more variables: positive &lt;dbl&gt;, hospitalized &lt;dbl&gt;, recovered &lt;dbl&gt;,
-#   death &lt;dbl&gt;, total_tested &lt;dbl&gt;, active &lt;dbl&gt;, hospitalizedCurr &lt;dbl&gt;,
-#   daily_tested &lt;dbl&gt;, daily_positive &lt;dbl&gt;</code></pre>
-<pre class="r"><code># Glimpse df
-library(tibble)
-glimpse(covid_df)</code></pre>
-<pre><code>Rows: 10,903
-Columns: 14
-$ Date                    &lt;date&gt; 2020-01-20, 2020-01-22, 2020-01-22, 2020-01-…
-$ Continent_Name          &lt;chr&gt; &quot;Asia&quot;, &quot;North America&quot;, &quot;North America&quot;, &quot;No…
-$ Two_Letter_Country_Code &lt;chr&gt; &quot;KR&quot;, &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, &quot;US&quot;, &quot;KR&quot;, &quot;US&quot;, &quot;US…
-$ Country_Region          &lt;chr&gt; &quot;South Korea&quot;, &quot;United States&quot;, &quot;United State…
-$ Province_State          &lt;chr&gt; &quot;All States&quot;, &quot;All States&quot;, &quot;Washington&quot;, &quot;Al…
-$ positive                &lt;dbl&gt; 1, 1, 1, 1, 1, 2, 1, 1, 4, 0, 3, 0, 0, 0, 0, …
-$ hospitalized            &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
-$ recovered               &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
-$ death                   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
-$ total_tested            &lt;dbl&gt; 4, 1, 1, 1, 1, 27, 1, 1, 0, 0, 0, 0, 0, 0, 0,…
-$ active                  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
-$ hospitalizedCurr        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
-$ daily_tested            &lt;dbl&gt; 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
-$ daily_positive          &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</code></pre>
-<div id="dataset-columns-descriptions" class="section level3">
-<h3>Dataset columns descriptions:</h3>
-<ol style="list-style-type: decimal">
-<li>Date: Date</li>
-<li>Continent_Name: Continent names</li>
-<li>Two_Letter_Country_Code: Country codes</li>
-<li>Country_Region: Country names</li>
-<li>Province_State: States/province names; value is All States when state/provincial level data is not available</li>
-<li>positive: <em>Cumulative</em> number of positive cases reported.</li>
-<li>active: Number of actively cases on that <strong>day</strong>.</li>
-<li>hospitalized: <em>Cumulative</em> number of hospitalized cases reported.</li>
-<li>hospitalizedCurr: Number of actively hospitalized cases on that <strong>day</strong>. 10.recovered: <em>Cumulative</em> number of recovered cases reported.</li>
-<li>death: <em>Cumulative</em> number of deaths reported.</li>
-<li>total_tested: <em>Cumulative</em> number of tests conducted.</li>
-<li>daily_tested: Number of tests conducted on the <strong>day</strong>; if daily data is unavailable, daily tested is averaged across number of days in between.</li>
-<li>daily_positive: Number of positive cases reported on the <strong>day</strong>; if daily data is unavailable, daily positive is averaged across number of days in.</li>
-</ol>
-<p>To focus on COVID cases and tests within entire countries, we will filter the data to retain only the rows where Province_State is listed as “All States”</p>
-<pre class="r"><code>library(dplyr)</code></pre>
+<pre class="r"><code># Load packages
+rm(list = ls()) # clear workspace
+library(tidyverse)</code></pre>
+<pre><code>── Attaching packages ─────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+✓ tibble  3.0.3     ✓ dplyr   1.0.2
+✓ tidyr   1.1.2     ✓ stringr 1.4.0
+✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
+<pre><code>── Conflicts ────────────────────── tidyverse_conflicts() ──
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(utils)
+
+# Set working directory
+#setwd(&quot;~/Documents/UChicago/BSDBoot&quot;)</code></pre>
+<p>Analysis will use a dataset of COVID-19 cases worldwide sourced from the European Centre for Disease Prevention and Control. This dataset is updated daily and reports the cumulative number of COVID-19 cases per 100K individuals over 14 days.</p>
+<pre class="r"><code>#read the Dataset sheet into “R”. The dataset will be called &quot;data&quot;.
+data &lt;- read.csv(&quot;https://opendata.ecdc.europa.eu/covid19/casedistribution/csv&quot;, 
+                 na.strings = &quot;&quot;, 
+                 fileEncoding = &quot;UTF-8-BOM&quot;)
+#head(data)
+# change column names
+data &lt;- rename(data, 
+               c(cumu = Cumulative_number_for_14_days_of_COVID.19_cases_per_100000,
+                 country = countriesAndTerritories,
+                 countryCode = countryterritoryCode))
+#head(data)</code></pre>
+<p>We will be highlighting a significant relationship between COVID-19 cases and the number of letters in a country’s name</p>
+<pre class="r"><code># count characters in country name and insert them in a new column
+data$nameCount &lt;- NA
+data[,&quot;nameCount&quot;] &lt;- nchar(data$country)
+
+# build linear model for the relationship between nameCount and cumu
+name_model &lt;- lm(cumu~data$nameCount, data=data) 
+
+# check p value
+summary(name_model)</code></pre>
 <pre><code>
-Attaching package: &#39;dplyr&#39;</code></pre>
-<pre><code>The following objects are masked from &#39;package:stats&#39;:
+Call:
+lm(formula = cumu ~ data$nameCount, data = data)
 
-    filter, lag</code></pre>
-<pre><code>The following objects are masked from &#39;package:base&#39;:
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-180.10  -32.32  -28.21   -6.51 1024.70 
 
-    intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>covid_df_all_states &lt;- covid_df %&gt;% filter(Province_State == &quot;All States&quot;) %&gt;% select(-Province_State)</code></pre>
-<p>To study COVID cases and tests by country over time we will need to seperate columns describing cumulative data versus daily reports</p>
-<ul>
-<li>Selected cumulative data columns will be
-<ul>
-<li>Date</li>
-<li>Country_Region</li>
-<li>positive</li>
-<li>hospitalized</li>
-<li>recovered</li>
-<li>death</li>
-<li>total_tested</li>
-</ul></li>
-<li>Selected daily reports data columns will be
-<ul>
-<li>Date</li>
-<li>Country_Region</li>
-<li>active</li>
-<li>hospitalizedCurr</li>
-<li>daily_tested</li>
-<li>daily_positive</li>
-</ul></li>
-</ul>
-<pre class="r"><code>covid_df_all_states_cumu &lt;- covid_df %&gt;% select(Date, Country_Region, positive, hospitalized, recovered, death, total_tested)
-covid_df_all_states_daily &lt;- covid_df %&gt;% select(Date, Country_Region, active, hospitalizedCurr, daily_tested, daily_positive)</code></pre>
-<p>I plan to find overall number of COVID-19 tested, positive, active and hospitalized cases by country and then highlight the top ten countries</p>
-<pre class="r"><code># Cumulative data columns
-covid_df_all_states_cumu_sum &lt;- covid_df_all_states_cumu %&gt;% group_by(Country_Region) %&gt;% summarize(positive = sum(positive), hospitalized = sum(hospitalized), recovered = sum(recovered), death = sum(death), tested = sum(total_tested), pos_v_test = positive/tested) </code></pre>
-<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<pre class="r"><code>covid_cumu_top_tests &lt;- covid_df_all_states_cumu_sum %&gt;% arrange(desc(tested))
+Coefficients:
+               Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)    34.37564    0.75266  45.672   &lt;2e-16 ***
+data$nameCount -0.16958    0.07201  -2.355   0.0185 *  
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
-# Daily reports data columns
-covid_df_all_states_daily_sum &lt;- covid_df_all_states_daily %&gt;% group_by(Country_Region) %&gt;% summarize(active = sum(active), hospitalized = sum(hospitalizedCurr), tested = sum(daily_tested), positive = sum(daily_positive), pos_v_test = positive/tested) </code></pre>
-<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<pre class="r"><code>covid_daily_top_tests &lt;- covid_df_all_states_daily_sum %&gt;% arrange(desc(tested))</code></pre>
-<pre class="r"><code># Cumulative data columns
-covid_cumu_top_10 &lt;- head(covid_cumu_top_tests, 10)
-covid_cumu_top_10</code></pre>
-<pre><code># A tibble: 10 x 7
-   Country_Region  positive hospitalized recovered   death    tested pos_v_test
-   &lt;chr&gt;              &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
- 1 United States  133567277      7741794  10548079 6808745 938854656    0.142  
- 2 Russia           9410355            0   2378177   92475 266943716    0.0353 
- 3 Italy           14006022            0   5120095 1734418 138050847    0.101  
- 4 Canada           6587044            0   1930745  217332 111930402    0.0588 
- 5 Australia         897936            0    609758   10410  92028873    0.00976
- 6 India             913912            0         0       0  80465782    0.0114 
- 7 Turkey           6679813            0   3523898  174954  64786701    0.103  
- 8 South Korea       920238            0    599796   17530  48595008    0.0189 
- 9 United Kingdom   4980411            0         0  863557  26041596    0.191  
-10 Germany           891068            0         0       0  25909847    0.0344 </code></pre>
-<pre class="r"><code># Daily reports data columns
-covid_daily_top_10 &lt;- head(covid_daily_top_tests, 10)
-covid_daily_top_10</code></pre>
-<pre><code># A tibble: 10 x 6
-   Country_Region   active hospitalized   tested positive pos_v_test
-   &lt;chr&gt;             &lt;dbl&gt;        &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;
- 1 United States  27687993      2899151 34218115  3660635    0.107  
- 2 Russia          6924890            0 10542266   406368    0.0385 
- 3 Italy           6202214      1699003  4091291   251710    0.0615 
- 4 India                 0            0  3692851    60959    0.0165 
- 5 Canada          1477358            0  3314703   181769    0.0548 
- 6 Australia        269172        14020  2658762    14400    0.00542
- 7 Turkey          2980960            0  2031192   163941    0.0807 
- 8 United Kingdom        0            0  1473672   166909    0.113  
- 9 Peru                  0            0   976790    59497    0.0609 
-10 Poland           538203            0   928256    23987    0.0258 </code></pre>
-<p>Lets compare the numbers of positive cases against the number of tests</p>
-<pre class="r"><code>#Compare positive cases vs. tests for cumulative data columns
-covid_cumu_top_pvt &lt;- covid_df_all_states_cumu_sum %&gt;% arrange(desc(pos_v_test))
-covid_cumu_top_10_pvt &lt;- head(covid_cumu_top_pvt, 10)
-covid_cumu_top_10_pvt</code></pre>
-<pre><code># A tibble: 10 x 7
-   Country_Region  positive hospitalized recovered   death    tested pos_v_test
-   &lt;chr&gt;              &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
- 1 Tanzania             509            0         0       0      1304      0.390
- 2 Ecuador            91850            0         0       0    366348      0.251
- 3 Sweden            209275            0         0   26297    961280      0.218
- 4 United Kingdom   4980411            0         0  863557  26041596      0.191
- 5 Cameroon            7440            0         0       0     39913      0.186
- 6 Congo                971            0         0       0      5484      0.177
- 7 Belgium          1883221       607743    409025  274862  10704716      0.176
- 8 Netherlands       229873            0         0       0   1461909      0.157
- 9 Guinea              2990            0         0       0     19783      0.151
-10 United States  133567277      7741794  10548079 6808745 938854656      0.142</code></pre>
-<pre class="r"><code>#Compare positive cases vs. tests for daily reports data columns
-covid_daily_top_pvt &lt;- covid_df_all_states_cumu_sum %&gt;% arrange(desc(pos_v_test))
-covid_daily_top_10_pvt &lt;- head(covid_daily_top_pvt, 10)
-covid_daily_top_10_pvt</code></pre>
-<pre><code># A tibble: 10 x 7
-   Country_Region  positive hospitalized recovered   death    tested pos_v_test
-   &lt;chr&gt;              &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
- 1 Tanzania             509            0         0       0      1304      0.390
- 2 Ecuador            91850            0         0       0    366348      0.251
- 3 Sweden            209275            0         0   26297    961280      0.218
- 4 United Kingdom   4980411            0         0  863557  26041596      0.191
- 5 Cameroon            7440            0         0       0     39913      0.186
- 6 Congo                971            0         0       0      5484      0.177
- 7 Belgium          1883221       607743    409025  274862  10704716      0.176
- 8 Netherlands       229873            0         0       0   1461909      0.157
- 9 Guinea              2990            0         0       0     19783      0.151
-10 United States  133567277      7741794  10548079 6808745 938854656      0.142</code></pre>
+Residual standard error: 75.76 on 40726 degrees of freedom
+  (2781 observations deleted due to missingness)
+Multiple R-squared:  0.0001362, Adjusted R-squared:  0.0001116 
+F-statistic: 5.546 on 1 and 40726 DF,  p-value: 0.01853</code></pre>
+<pre class="r"><code># plot model
+plot(data$cumu~data$nameCount, ylim = c(0, 1100), xlim = c(0, 35))</code></pre>
+<p><img src="figure/laevis_phack.Rmd/phack!-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>We identified a significant relationship (p-value: 0.02304) between the length of a country’s name and COVID-19 cases.</p>
+<p>We noticed during analysis that the majority of countries within the data set tend to have names containing 25 characters or less. Additionally, the countries with the highest cumulative number of COVID-19 cases just happen to have 5-character-long-names, whereas the few countries with names longer than 30 characters have a lower number of COVID-19 cases. This random pattern creates the appearance of an association where none truly exists. Our significant relationship relies on a sample population that doesn’t accurately represent our population of interest. Although there is a relationship between character length and high COVID-19 cases, there is no causal link between character length and virus behavior (viruses don’t care what country a person belongs to given the opportunity to infect and they certainly cannot interpret characters). Therefore we are subseting the data to fit a false interpretation.</p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -857,21 +668,25 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] dplyr_1.0.2     tibble_3.0.3    readr_1.3.1     workflowr_1.6.2
+ [1] forcats_0.5.0   stringr_1.4.0   dplyr_1.0.2     purrr_0.3.4    
+ [5] readr_1.3.1     tidyr_1.1.2     tibble_3.0.3    ggplot2_3.3.2  
+ [9] tidyverse_1.3.0 workflowr_1.6.2
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.5       pillar_1.4.6     compiler_4.0.2   later_1.1.0.1   
- [5] git2r_0.27.1     tools_4.0.2      digest_0.6.25    evaluate_0.14   
- [9] lifecycle_0.2.0  pkgconfig_2.0.3  rlang_0.4.7      cli_2.0.2       
-[13] rstudioapi_0.11  yaml_2.2.1       xfun_0.17        stringr_1.4.0   
-[17] knitr_1.29       generics_0.0.2   fs_1.5.0         vctrs_0.3.4     
-[21] hms_0.5.3        tidyselect_1.1.0 rprojroot_1.3-2  glue_1.4.2      
-[25] R6_2.4.1         fansi_0.4.1      rmarkdown_2.3    purrr_0.3.4     
-[29] magrittr_1.5     whisker_0.4      backports_1.1.10 promises_1.1.1  
-[33] ellipsis_0.3.1   htmltools_0.5.0  assertthat_0.2.1 httpuv_1.5.4    
-[37] utf8_1.1.4       stringi_1.5.3    crayon_1.3.4    </code></pre>
-</div>
-</div>
+ [1] tidyselect_1.1.0 xfun_0.17        haven_2.3.1      colorspace_1.4-1
+ [5] vctrs_0.3.4      generics_0.0.2   htmltools_0.5.0  yaml_2.2.1      
+ [9] blob_1.2.1       rlang_0.4.7      later_1.1.0.1    pillar_1.4.6    
+[13] withr_2.2.0      glue_1.4.2       DBI_1.1.0        dbplyr_1.4.4    
+[17] modelr_0.1.8     readxl_1.3.1     lifecycle_0.2.0  munsell_0.5.0   
+[21] gtable_0.3.0     cellranger_1.1.0 rvest_0.3.6      evaluate_0.14   
+[25] knitr_1.29       httpuv_1.5.4     fansi_0.4.1      broom_0.7.0     
+[29] Rcpp_1.0.5       promises_1.1.1   backports_1.1.10 scales_1.1.1    
+[33] jsonlite_1.7.1   fs_1.5.0         hms_0.5.3        digest_0.6.25   
+[37] stringi_1.5.3    rprojroot_1.3-2  grid_4.0.2       cli_2.0.2       
+[41] tools_4.0.2      magrittr_1.5     crayon_1.3.4     whisker_0.4     
+[45] pkgconfig_2.0.3  ellipsis_0.3.1   xml2_1.3.2       reprex_0.3.0    
+[49] lubridate_1.7.9  assertthat_0.2.1 rmarkdown_2.3    httr_1.4.2      
+[53] rstudioapi_0.11  R6_2.4.1         git2r_0.27.1     compiler_4.0.2  </code></pre>
 </div>
 
 
