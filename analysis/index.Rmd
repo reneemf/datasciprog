@@ -17,8 +17,9 @@ More information can be found on me [here](https://linktr.ee/fonsecarenee).
 
 2020:
 
-* [COVID19 Trend Analysis in R](COVID19Trends.html)
+* [P-hacking practice](laevis_phack.html)
 * [Forest Fire Stats Analysis in R](forestfires.html)
+* [COVID19 Trend Analysis in R](COVID19Trends.html)
 * [Mobile app analytics in Python using Jupyter Notebook](https://github.com/reneemf/Mobile_app_analytics)
 * [Credit card checker tool in C](https://github.com/reneemf/CC_checker)
 

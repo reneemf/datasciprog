@@ -1,0 +1,66 @@
+---
+title: "laevis_phack"
+author: "Renee"
+date: "9/17/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r prep packages & directory}
+# Load packages
+rm(list = ls()) # clear workspace
+library(tidyverse)
+library(utils)
+
+# Set working directory
+#setwd("~/Documents/UChicago/BSDBoot")
+```
+
+
+Analysis will use a dataset of COVID-19 cases worldwide sourced from the European Centre for Disease Prevention and Control. This dataset is updated daily and reports the cumulative number of COVID-19 cases per 100K individuals over 14 days.
+```{r load & prep data}
+#read the Dataset sheet into “R”. The dataset will be called "data".
+data <- read.csv("https://opendata.ecdc.europa.eu/covid19/casedistribution/csv", 
+                 na.strings = "", 
+                 fileEncoding = "UTF-8-BOM")
+#head(data)
+# change column names
+data <- rename(data, 
+               c(cumu = Cumulative_number_for_14_days_of_COVID.19_cases_per_100000,
+                 country = countriesAndTerritories,
+                 countryCode = countryterritoryCode))
+#head(data)
+```
+
+
+We will be highlighting a significant relationship between COVID-19 cases and the number of letters in a country's name
+```{r phack!}
+# count characters in country name and insert them in a new column
+data$nameCount <- NA
+data[,"nameCount"] <- nchar(data$country)
+
+# build linear model for the relationship between nameCount and cumu
+name_model <- lm(cumu~data$nameCount, data=data) 
+
+# check p value
+summary(name_model)
+
+# plot model
+plot(data$cumu~data$nameCount, ylim = c(0, 1100), xlim = c(0, 35))
+
+```
+
+We identified a significant relationship (p-value: 0.02304) between the length of a country's name and COVID-19 cases.
+
+We noticed during analysis that the majority of countries within the data set tend to have names containing 25 characters or less. Additionally, the countries with the highest cumulative number of COVID-19 cases just happen to have 5-character-long-names, whereas the few countries with names longer than 30 characters have a lower number of COVID-19 cases. This random pattern creates the appearance of an association where none truly exists.  Our significant relationship relies on a sample population that doesn’t accurately represent our population of interest. Although there is a relationship between character length and high COVID-19 cases, there is no causal link between character length and virus behavior  (viruses don’t care what country a person belongs to given the opportunity to infect and they certainly cannot interpret characters). Therefore we are subseting the data to fit a false interpretation. 
+
+
+
+
+
+
+
+
